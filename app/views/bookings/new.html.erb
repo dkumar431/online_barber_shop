@@ -1,0 +1,21 @@
+<%= form_for @booking do |f|  %>
+    <%= fields_for  @customer do |c| %>
+        <div>
+            <%= c.text_field :name %>
+        </div>
+        <div>
+            <%= c.text_field :email %>
+        </div>
+        <div>
+            <%= c.text_field :phone %>
+        </div>
+        <div>
+            <%= c.text_field :age %>
+        </div>
+        <div>
+            <%= c.text_field :address %>
+        </div>
+    <% end %>
+    <%= f.hidden_field :slot_id, value: @booking.slot_id %>
+    <%= f.submit 'Book' %>
+<% end %>
