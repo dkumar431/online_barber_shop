@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :bookings do
     collection do
       post :search
+      get :confirm
+      get :bookings_by_date
+      post :fetch
     end
   end
 

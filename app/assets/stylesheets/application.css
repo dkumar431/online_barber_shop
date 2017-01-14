@@ -20,7 +20,24 @@
 
 .slot {
   width: 100px;
-  height: 100px;
-  background-color: green;
+  height: 70px;
   margin: 5px;
+}
+.center{
+    margin: 0 auto;
+    margin-top: 5%;
+    width:80% /* value of your choice which suits your alignment */
+}
+
+.vertical-space {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.available {
+  background-color: green;
+}
+
+.not-available {
+  background-color: grey;
 }

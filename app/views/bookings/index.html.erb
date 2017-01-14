@@ -1,16 +1,18 @@
+<div class="center">
+  <%= render 'bookings/partials/search'%>
 
-<%= form_tag search_bookings_path, method: :post do %>
-  <%= text_field_tag 'booking-date', nil, class: :datepicker %>
-  <%= submit_tag 'Search' %>
-<% end %>
+  <div class="col-md-6">
+    <div class="panel" class="vertical-space"></div>
+  </div>
 
-
-
-<% if @available_slots.present? %>
-  <% @available_slots.each do |slot| %>
-    <div class="slot">
-      <%= slot.start_time %> -- <%= slot.end_time %>
-      <%= link_to 'Book Now', new_booking_path(slot_id: slot.slot_id, booking_date: @booking_date) %>
-    </div>
-  <% end %>
-<% end %>
+  <div class="col-md-9 col-md-offset-2">
+    <% if @available_slots.present? %>
+      <% @available_slots.each do |slot| %>
+        <div class="<%= @bookings_presenter.get_class(slot)%>">
+          <%= slot.start_time %> -- <%= slot.end_time %> -- <%= slot.booking_id%>
+          <%= link_to 'Book Now', new_booking_path(slot_id: slot.slot_id, booking_date: @booking_date) %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="col-md-4 col-md-offset-4">
+    <% form_submit_path = params[:action] == "search" ? search_bookings_path : fetch_bookings_path  %>
+    <%= form_tag form_submit_path, class: "form-inline", method: :post do %>
+      <div class="form-group">
+      <%= label(:search, :date) %>
+        <%= text_field_tag 'booking-date', nil, class: "datepicker form-control", value: @booking_date %>
+      </div>
+
+      <%= submit_tag 'Search', class: "btn btn-default" %>
+    <% end %>
+  </div>
