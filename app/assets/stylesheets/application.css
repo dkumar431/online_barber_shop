@@ -17,11 +17,16 @@
  *= require jquery-ui
  */
 
-
+.error{
+  color: red;
+}
 .slot {
   width: 100px;
   height: 70px;
   margin: 5px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px;
 }
 .center{
     margin: 0 auto;
@@ -35,9 +40,29 @@
 }
 
 .available {
-  background-color: green;
+  background-color: #E5E4E2;
 }
 
 .not-available {
-  background-color: grey;
+  background-color: #C11B17;
+}
+.pull-right{
+  margin-right: 0px;
+  margin-top: 5px;
+}
+
+.timings{
+  margin-top: 3px;
+  font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 15.4px;
+}
+
+
+.search-alert{
+  text-align: center;
+  margin-top: 50px;
 }

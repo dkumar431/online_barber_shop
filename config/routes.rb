@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     collection do
       post :search
       get :confirm
-      get :bookings_by_date
-      post :fetch
+      get :bookings_list
+      post :fetch_all_bookings
     end
   end
 
