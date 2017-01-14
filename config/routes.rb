@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  # root 'slots#index'
   root to: 'bookings#index'
 
   resources :bookings do
@@ -16,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :slots  do
     collection do
-      get 'available_slots'
+      get :available_slots
     end
   end
 

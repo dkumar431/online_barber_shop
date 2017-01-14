@@ -36,7 +36,4 @@ class Booking < ActiveRecord::Base
     self.errors.add(:base, 'Customer not present') and return false unless self.customer.present?
     self.errors.messages.merge!(self.customer.errors.messages) and return false unless self.customer.valid?
   end
-
-
-
 end

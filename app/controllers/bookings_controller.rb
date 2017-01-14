@@ -32,13 +32,11 @@ class BookingsController < ApplicationController
   def search
     @booking_date = params['booking-date']
     @available_slots = Slot.get_available_slots(@booking_date)
-    # raise @available_slots.map(&:booking_id).inspect
     @bookings_presenter  = BookingsPresenter.new(view_context)
     render :index
   end
 
-  def confrim
-    #send email
+  def confirm
   end
 
   def bookings_list

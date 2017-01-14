@@ -17,7 +17,6 @@ class Customer < ActiveRecord::Base
   has_one :slot
   accepts_nested_attributes_for :slot
 
-
   validates_presence_of :name, message: 'Please provide your name'
   validates_presence_of :email, message: 'Please provide your email'
   validates_presence_of :phone, message: 'Please provide your phone number'
