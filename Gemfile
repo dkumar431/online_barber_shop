@@ -35,7 +35,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # To anotate all the model files for better readablity
 gem 'annotate'
-
+  # For generating fake data
+  gem 'faker'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -47,10 +48,6 @@ group :development, :test do
 
   # To stop asset pipelining log messages
   gem 'quiet_assets'
-
-  # For generating fake data
-  gem 'faker'
-
   #For rspec
   gem 'rspec-collection_matchers'
 end
