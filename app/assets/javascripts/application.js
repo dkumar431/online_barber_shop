@@ -21,38 +21,14 @@
 
 
 $(document).on('ready', function(){
-    performBooking();
-    loadDatePicker();
-});
-
-$(document).on('page:load', function() {
-    performBooking();
-    loadDatePicker();
-  });
-
-  $(window).bind('load', function() {
-    performBooking();
-    loadDatePicker();
-  });
-
-function loadDatePicker(){
-  console.log('picker loaded');
-  $('.datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
-}
-
-function performBooking() {
-
-  $('#search_results').on('click', '.slot', function(){
-    var slot_id = $(this).attr("slot_id");
-    var booking_date = $("#barber-picker").val();
-
-    $.ajax('/bookings/new', {
-      data: { slot_id : slot_id, booking_date: booking_date },
-      success: function(data) {
-      },
-      error: function(e) {
-        console.log(e);
+    $('.datepicker').datepicker({ dateFormat: 'yy-mm-dd' });
+    $("#search_form").on("submit",function(){
+      var date = $('.datepicker').val();
+      // alert(date.length == 0);
+      if(date.length == 0){
+        alert("Please select a date.");
+        return false;
       }
-    });
-  });
-}
+        
+    })
+});

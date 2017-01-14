@@ -49,6 +49,11 @@ group :development, :test do
   # To stop asset pipelining log messages
   gem 'quiet_assets'
 
+  # For generating fake data
+  gem 'faker'
+
+  #For rspec
+  gem 'rspec-collection_matchers'
 end
 
 group :development do

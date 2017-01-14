@@ -45,10 +45,11 @@ class BookingsController < ApplicationController
 
   def fetch_all_bookings
     @booking_date = params['booking-date']
-    @bookings = Booking.fetch_bookings(params['booking-date'])
+    @bookings = Booking.fetch_bookings(@booking_date)
   end
 
   private
+  
   def booking_params
     params.require(:booking).permit(:slot_id,:booking_date)
   end

@@ -20,18 +20,15 @@ class Booking < ActiveRecord::Base
   validates_presence_of :customer
   validate :custom_validation
 
-  def customer_can_not_be_nil
-    errors.add(:name, "customer_name can not be null") if self.customer.name.blank?
-  end
 
   def self.fetch_bookings(booking_date = nil)
-    Booking.joins("left join customers on customers.id = bookings.customer_id
-                    left join slots on slots.id = bookings.slot_id ")
-    .select("customers.name,customers.email,customers.phone, slots.id as slot_id, slots.start_time,slots.end_time")
-    .where("booking_date = ?",booking_date)
+    Booking.joins("left join customers on customers.id = bookings.customer_id left join slots on slots.id = bookings.slot_id ")
+      .select("customers.name,customers.email,customers.phone, slots.id as slot_id, slots.start_time,slots.end_time")
+      .where("booking_date = ?",booking_date)
   end
 
   private
+  
   def custom_validation
     self.errors.add(:base, 'Customer not present') and return false unless self.customer.present?
     self.errors.messages.merge!(self.customer.errors.messages) and return false unless self.customer.valid?

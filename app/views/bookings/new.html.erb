@@ -1,7 +1,6 @@
-<% errors = @booking.errors.messages %>
 
-<div class="center">
   <div class="col-md-12 col-md-offset-3">
+  <% errors = @booking.errors.messages %>
 
   <%= form_for @booking do |f|  %>
       <%= fields_for  @booking.customer do |c| %>
@@ -50,4 +49,3 @@
 
     <% end %>
   </div>
-</div>
